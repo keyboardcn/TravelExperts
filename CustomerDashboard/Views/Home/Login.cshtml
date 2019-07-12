@@ -1,0 +1,117 @@
+﻿@model CustomerDashboard.Customer
+
+@{
+    ViewBag.Title = "Login";
+}
+
+@*<h2>Login</h2>*@
+
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+<fieldset>
+    @*<legend>Please Login with your first name and last name</legend>*@
+
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @if (@ViewBag.Message != null)
+    {
+        <div style="border: 1px solid red">
+            @ViewBag.Message
+        </div>
+    }
+
+    <div class="page-header header-filter" style="background-image:url('../../Images/bg3.jpg'); background-size: cover; background-position: top center;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+                    <div class="card card-login">
+
+                        <div class="card-header card-header-primary text-center">
+                            <h3 class="card-title">Customer Login</h3>
+                        </div>
+                        <p class="description text-center"></p>
+                        <div class="card-body">
+                            <div class="card-body">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">face</i>
+
+                                        </span>
+                                    </div>
+                                    @Html.TextBoxFor(a => a.CustomerId, new { placeholder = "ID", @class = "form-control" })
+                                   
+                                    @*<p class="text-danger"><br />@Html.ValidationMessageFor(a => a.CustFirstName)</p>*@
+
+
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">lock_outline</i>
+                                        </span>
+                                    </div>
+
+                                    @Html.PasswordFor(a => a.CustPassword, new { placeholder = "Password", @class = "form-control" })
+
+                                    @*<p class="text-danger"><br />
+                                        @Html.ValidationMessageFor(a => a.CustLastName)
+                                    </p>*@
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="footer text-center">
+                            <p class="text-danger text-sm-center">
+                                
+                                @Html.ValidationMessageFor(a => a.CustLastName) <br />
+                            
+                            @Html.ValidationMessageFor(a => a.CustFirstName)</p>
+                            <input type="submit" value="Login" class="btn btn-primary btn-link btn-wd btn-lg" />
+
+                        </div>
+                        <div class="text-center">
+                            @Html.ActionLink("Click here to register", "Create")
+                        </div><br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @*<div class="footer text-center">
+        <input type="submit" value="Login" class="btn btn-primary btn-link btn-wd btn-lg" />
+    </div>*@
+    @*original*@
+    @*<table>
+            <tr>
+                <td>@Html.LabelFor(a => a.CustFirstName, "First Name")</td>
+                <td>@Html.TextBoxFor(a => a.CustFirstName)</td>
+                <td>@Html.ValidationMessageFor(a => a.CustFirstName)</td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(a => a.CustLastName, "Last Name")
+                </td>
+                <td>
+                    @Html.TextBoxFor(a => a.CustLastName)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(a => a.CustLastName)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Login" class="btn btn-primary btn-link btn-wd btn-lg"/>
+                </td>
+                <td></td>
+            </tr>
+        </table>*@
+</fieldset>
+}
+

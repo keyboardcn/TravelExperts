@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TravelExpertBookingDetails.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BookingDetails">
+          <Key>
+            <PropertyRef Name="BookingDetailId" />
+          </Key>
+          <Property Name="BookingDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ItineraryNo" Type="float" />
+          <Property Name="TripStart" Type="datetime" />
+          <Property Name="TripEnd" Type="datetime" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="Destination" Type="nvarchar" MaxLength="255" />
+          <Property Name="BasePrice" Type="money" />
+          <Property Name="AgencyCommission" Type="money" />
+          <Property Name="BookingId" Type="int" />
+          <Property Name="RegionId" Type="nvarchar" MaxLength="5" />
+          <Property Name="ClassId" Type="nvarchar" MaxLength="5" />
+          <Property Name="FeeId" Type="nvarchar" MaxLength="10" />
+          <Property Name="ProductSupplierId" Type="int" />
+        </EntityType>
+        <EntityContainer Name="TravelExpertBookingDetailsStoreContainer">
+          <EntitySet Name="BookingDetails" EntityType="Self.BookingDetails" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TravelExpertBookingDetails" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BookingDetail">
+          <Key>
+            <PropertyRef Name="BookingDetailId" />
+          </Key>
+          <Property Name="BookingDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItineraryNo" Type="Double" />
+          <Property Name="TripStart" Type="DateTime" Precision="3" />
+          <Property Name="TripEnd" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Destination" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="BasePrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="AgencyCommission" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="BookingId" Type="Int32" />
+          <Property Name="RegionId" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="ClassId" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="FeeId" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ProductSupplierId" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="TravelExpertsBookingDetails" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BookingDetails" EntityType="Self.BookingDetail" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TravelExpertBookingDetailsStoreContainer" CdmEntityContainer="TravelExpertsBookingDetails">
+          <EntitySetMapping Name="BookingDetails">
+            <EntityTypeMapping TypeName="TravelExpertBookingDetails.BookingDetail">
+              <MappingFragment StoreEntitySet="BookingDetails">
+                <ScalarProperty Name="BookingDetailId" ColumnName="BookingDetailId" />
+                <ScalarProperty Name="ItineraryNo" ColumnName="ItineraryNo" />
+                <ScalarProperty Name="TripStart" ColumnName="TripStart" />
+                <ScalarProperty Name="TripEnd" ColumnName="TripEnd" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Destination" ColumnName="Destination" />
+                <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
+                <ScalarProperty Name="AgencyCommission" ColumnName="AgencyCommission" />
+                <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="FeeId" ColumnName="FeeId" />
+                <ScalarProperty Name="ProductSupplierId" ColumnName="ProductSupplierId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

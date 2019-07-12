@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TravelExpertBookingDetails" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BookingDetail">
+    <Key>
+      <PropertyRef Name="BookingDetailId" />
+    </Key>
+    <Property Name="BookingDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItineraryNo" Type="Double" />
+    <Property Name="TripStart" Type="DateTime" Precision="3" />
+    <Property Name="TripEnd" Type="DateTime" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Destination" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BasePrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="AgencyCommission" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="BookingId" Type="Int32" />
+    <Property Name="RegionId" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="ClassId" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="FeeId" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ProductSupplierId" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="TravelExpertsBookingDetails" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BookingDetails" EntityType="Self.BookingDetail" />
+  </EntityContainer>
+</Schema>

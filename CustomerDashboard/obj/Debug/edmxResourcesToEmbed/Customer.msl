@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TravelExpertsModelStoreContainer" CdmEntityContainer="TravelExpertsEntities">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="TravelExpertsModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="ComparePassword" ColumnName="ComparePassword" />
+          <ScalarProperty Name="CustPassword" ColumnName="CustPassword" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="CustFirstName" ColumnName="CustFirstName" />
+          <ScalarProperty Name="CustLastName" ColumnName="CustLastName" />
+          <ScalarProperty Name="CustAddress" ColumnName="CustAddress" />
+          <ScalarProperty Name="CustCity" ColumnName="CustCity" />
+          <ScalarProperty Name="CustProv" ColumnName="CustProv" />
+          <ScalarProperty Name="CustPostal" ColumnName="CustPostal" />
+          <ScalarProperty Name="CustCountry" ColumnName="CustCountry" />
+          <ScalarProperty Name="CustHomePhone" ColumnName="CustHomePhone" />
+          <ScalarProperty Name="CustBusPhone" ColumnName="CustBusPhone" />
+          <ScalarProperty Name="CustEmail" ColumnName="CustEmail" />
+          <ScalarProperty Name="AgentId" ColumnName="AgentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

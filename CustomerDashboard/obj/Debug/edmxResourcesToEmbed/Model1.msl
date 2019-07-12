@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TravelExpertBookingDetailsStoreContainer" CdmEntityContainer="TravelExpertsBookingDetails">
+    <EntitySetMapping Name="BookingDetails">
+      <EntityTypeMapping TypeName="TravelExpertBookingDetails.BookingDetail">
+        <MappingFragment StoreEntitySet="BookingDetails">
+          <ScalarProperty Name="BookingDetailId" ColumnName="BookingDetailId" />
+          <ScalarProperty Name="ItineraryNo" ColumnName="ItineraryNo" />
+          <ScalarProperty Name="TripStart" ColumnName="TripStart" />
+          <ScalarProperty Name="TripEnd" ColumnName="TripEnd" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
+          <ScalarProperty Name="AgencyCommission" ColumnName="AgencyCommission" />
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+          <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="FeeId" ColumnName="FeeId" />
+          <ScalarProperty Name="ProductSupplierId" ColumnName="ProductSupplierId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

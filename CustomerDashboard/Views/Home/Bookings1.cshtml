@@ -1,0 +1,66 @@
+﻿@model IEnumerable<CustomerDashboard.Booking>
+
+@{
+    ViewBag.Title = "Bookings1";
+}
+<div class="page-header header-filter" style="background-image:url('../../Images/bg.jpg'); background-size: cover; background-position: top center;">
+    <div class="container body-content">
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+                    <div class="container">
+                        <h2>Customer Bookings</h2>
+                        <div>
+                            @Html.ActionLink("Back to Profile", "UserDashBoard", null, new { @class = "btn btn-primary btn-round" })
+                           </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <tr>
+                                    <th>
+                                        Booking Date
+                                    </th>
+                                    <th>
+                                        Booking No
+                                    </th>
+                                    <th>
+                                        Number of Traveler
+                                    </th>
+                                    <th>
+                                        Customer Id
+                                    </th>
+                                    <th>
+                                        TripType Id
+                                    </th>
+                                    <th></th>
+                                </tr>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.BookingDate)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.BookingNo)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TravelerCount)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CustomerId)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TripTypeId)
+                                        </td>
+                                        <td>
+
+                                            @Html.ActionLink("Details", "BookingDetails", new { id = item.BookingId })
+
+                                        </td>
+                                    </tr>
+                                }
+
+                            </table>
+                        </div>
+                    </div>
+</div></div></div></div></div>

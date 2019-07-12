@@ -1,0 +1,85 @@
+﻿@model CustomerDashboard.BookingDetail
+
+@{
+    ViewBag.Title = "BookingDetails";
+}
+<div class="page-header header-filter" style="background-image:url('../../Images/bg7.jpg'); background-size: cover; background-position: top center;">
+    <div class="container body-content">
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+                    <div class="container">
+                        <h2>BookingDetails</h2>
+                        <p>
+
+                            @Html.ActionLink("Back to Booking History", "Bookings1", null, new { @class = "btn btn-primary btn-round" })
+                        </p>
+
+                        <div>
+                            <hr />
+                            <dl class="dl-horizontal">
+                                <dt>
+                                   Itinerary #
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.ItineraryNo)
+                                </dd>
+
+                                <dt>
+                                    Trip Start Date
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.TripStart)
+                                </dd>
+
+                                <dt>
+                                    Trip End Date
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.TripEnd)
+                                </dd>
+
+                                <dt>
+                                    Description
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Description)
+                                </dd>
+
+                                <dt>
+                                    Destination
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Destination)
+                                </dd>
+
+                                <dt>
+                                    Base Price
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.BasePrice)
+                                </dd>
+
+                                <dt>
+                                    Booking #
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.BookingId)
+                                </dd>
+
+
+                            </dl>
+                        </div>
+                        <p>
+
+                            @Html.ActionLink("Back to Booking History", "Bookings1", null, new { @class = "btn btn-primary btn-round" })
+                        </p>
+                    </div>
+</div></div></div></div></div>
